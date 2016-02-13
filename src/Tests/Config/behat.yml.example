@@ -1,0 +1,19 @@
+default:
+    autoload:
+        - %paths.base%/../Bootstrap/
+    extensions:
+            Behat\MinkExtension:
+                selenium2:
+                    wd_host: "http://localhost:8040/wd/hub"
+                base_url: 'http://packtpub.com/'
+                default_session: selenium2
+                browser_name: firefox
+    suites:
+        default:
+            paths:
+                - %paths.base%/../Features
+            contexts:
+                - ClaimPacktFree\Tests\Bootstrap\FeatureContext:
+                    - '/packt/offers/free-learning'
+                    - 'username'
+                    - 'password'
