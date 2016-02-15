@@ -9,5 +9,3 @@ Feature: claim packt publishing free learning book
     And I submit login form
     And I go to free learning books section
     And I claim free book
-    And I download today book
-    And I put a breakpoint

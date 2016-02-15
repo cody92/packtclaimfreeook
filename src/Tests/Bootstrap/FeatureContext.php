@@ -140,12 +140,4 @@ class FeatureContext extends MinkContext
         }
         $linkToClaim->click();
     }
-
-    /**
-     * @Given /^I download today book$/
-     */
-    public function iDownloadTodayBook()
-    {
-        $this->visit('/ebook_download/12544/pdf');
-    }
 }
