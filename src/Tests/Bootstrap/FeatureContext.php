@@ -46,7 +46,7 @@ class FeatureContext extends MinkContext
     public function iClickOnLoginButton()
     {
         $session = $this->getSession();
-        $session->wait(10000, '$("#menuIcon").length');
+        $session->wait(10000, 'document.getElementById("menuIcon") != null');
 
         $locator = 'menuIcon';
         $loginButton = $session->getPage()->findById($locator);
@@ -56,7 +56,7 @@ class FeatureContext extends MinkContext
 
         $loginButton->click();
 
-        $session->wait(10000, "$('.respoPage').attr('state') == 'show'");
+        $session->wait(10000, "document.getElementsByClassName('respoPage')[0].getAttribute('state') == 'show'");
 
         $selector = 'css';
         $linkLoginLocator = '.respoLogin';
